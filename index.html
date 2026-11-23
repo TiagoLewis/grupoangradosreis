@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concurso GCM Angra dos Reis | Grupo gratuito Instituto Souto</title>
+<meta name="description" content="Entre no grupo gratuito de WhatsApp do Instituto Souto para o concurso da Guarda Civil Municipal de Angra dos Reis: materiais de estudo, notícias e aulas gratuitas no YouTube.">
+<meta name="theme-color" content="#ededeb">
+<meta property="og:title" content="Concurso da GCM de Angra dos Reis | Instituto Souto">
+<meta property="og:description" content="Entre no grupo de WhatsApp e receba o material gratuito.">
+<meta property="og:image" content="img/prof-ismael.webp">
+<link rel="preload" href="fonts/InterDisplay-Medium.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/InterDisplay-Regular.woff" as="font" type="font/woff" crossorigin>
+<style>
+@font-face{font-family:"Inter Display";src:url(fonts/InterDisplay-Light.woff) format("woff");font-weight:300;font-display:swap}
+@font-face{font-family:"Inter Display";src:url(fonts/InterDisplay-Regular.woff) format("woff");font-weight:400;font-display:swap}
+@font-face{font-family:"Inter Display";src:url(fonts/InterDisplay-Medium.woff) format("woff");font-weight:500;font-display:swap}
+@font-face{font-family:"Inter Display";src:url(fonts/InterDisplay-SemiBold.woff) format("woff");font-weight:600;font-display:swap}
+
+:root{
+  --paper:#ededeb;--paper2:#f6f6f4;--ink-d:#111216;--mut-d:#5c5f69;
+  --bg:#07080b;--card:#0d0f14;--ink:#f4f4f6;--soft:#c8c9d0;--gray:#9a9ca8;--dim:#6b6e7a;
+  --line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.14);
+  --gold:#ffd45a;--orange:#ffa21f;--fire:#ff4a26;--red:#e3161b;
+  --grad:linear-gradient(90deg,#ffd45a 0%,#ffa21f 40%,#ff4a26 75%,#e3161b 100%);
+  --grad-dark:linear-gradient(90deg,#f08a00 0%,#ff4a26 55%,#d0101a 100%);
+  --grad-btn:linear-gradient(100deg,#ffcf4d 0%,#ffa21f 40%,#ff5a26 75%,#e3161b 100%);
+  --sans:"Inter Display","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --ease:cubic-bezier(.22,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.c{width:100%;max-width:1060px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+
+/* ============ BOTÃO ============ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--grad-btn);color:#1a0904;
+  font-size:15px;font-weight:500;letter-spacing:.03em;text-transform:uppercase;padding:17px 30px;border-radius:6px;
+  box-shadow:0 10px 28px -12px rgba(255,74,38,.55);transition:transform .35s var(--ease),box-shadow .35s var(--ease),filter .35s}
+.btn svg{transition:transform .35s var(--ease)}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.04);box-shadow:0 16px 34px -12px rgba(255,74,38,.7)}
+.btn:hover svg{transform:translate(2px,-2px)}
+
+/* cursor "Você" clicando no botão */
+.btn-wrap{position:relative;display:inline-block}
+.btn{position:relative;animation:brilho 2.6s ease-in-out infinite}
+.btn-wrap .btn{animation:press 4.6s var(--ease) infinite,brilho 2.6s ease-in-out infinite}
+.btn::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;animation:pisca 2.6s ease-out infinite}
+@keyframes pisca{0%{box-shadow:0 0 0 0 rgba(255,106,26,.45)}70%,100%{box-shadow:0 0 0 12px rgba(255,106,26,0)}}
+@keyframes brilho{50%{filter:brightness(1.08) saturate(1.05)}}
+.cur{position:absolute;left:80%;top:64%;z-index:3;display:flex;align-items:flex-start;gap:2px;pointer-events:none;animation:cur 4.6s var(--ease) infinite}
+.cur svg{filter:drop-shadow(0 3px 5px rgba(0,0,0,.25))}
+.cur b{margin-top:15px;font-size:11px;font-weight:600;letter-spacing:.02em;color:#fff;background:#ff6a1a;padding:3px 9px;border-radius:99px 99px 99px 4px;box-shadow:0 6px 14px -6px rgba(255,74,38,.7);white-space:nowrap}
+.cur::before{content:"";position:absolute;left:4px;top:3px;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;border:2px solid #ff6a1a;opacity:0;animation:clk 4.6s ease-out infinite}
+@keyframes cur{0%{transform:translate(70px,46px);opacity:0}12%{opacity:1}38%{transform:translate(0,0)}44%{transform:translate(0,0) scale(.86)}50%{transform:translate(0,0) scale(1)}72%{transform:translate(0,0);opacity:1}90%,100%{transform:translate(70px,46px);opacity:0}}
+@keyframes clk{0%,43%{opacity:0;transform:scale(.4)}45%{opacity:.9}62%,100%{opacity:0;transform:scale(3.2)}}
+@keyframes press{0%,42%,52%,100%{transform:none}46%{transform:scale(.975)}}
+/* ============ HERO (claro) ============ */
+.hero{position:relative;min-height:min(760px,100svh);display:flex;align-items:center;padding:84px 0 76px;overflow:hidden;
+  background:radial-gradient(ellipse 70% 60% at 50% 45%,var(--paper2) 0%,var(--paper) 70%);color:var(--ink-d)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(17,18,22,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(17,18,22,.055) 1px,transparent 1px);
+  background-size:56px 56px;background-position:center center;
+  -webkit-mask-image:radial-gradient(ellipse 75% 70% at 50% 50%,#000 35%,transparent 100%);mask-image:radial-gradient(ellipse 75% 70% at 50% 50%,#000 35%,transparent 100%)}
+.hero::after{content:"";position:absolute;left:50%;top:46%;width:620px;height:320px;margin:-160px 0 0 -310px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,162,31,.14),transparent);pointer-events:none}
+.hero .c{position:relative;z-index:1;text-align:center;max-width:900px}
+.hero-top{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap}
+.perfil{display:flex;align-items:center;gap:14px;text-align:left}
+.av{position:relative;width:60px;height:60px;flex:none}
+.av img{width:60px;height:60px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #fff,0 0 0 3px rgba(255,74,38,.55)}
+.av svg{position:absolute;right:-3px;bottom:-1px}
+.perfil b{display:block;font-size:15px;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
+.perfil small{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#d0450f;margin-top:1px}
+.vline{width:1px;height:40px;background:rgba(17,18,22,.14)}
+.mini-logo{width:40px;height:auto;filter:drop-shadow(0 6px 10px rgba(17,18,22,.18))}
+.lista{list-style:none;display:grid;gap:7px;text-align:left}
+.lista li{display:flex;align-items:center;gap:10px;font-size:14.5px;font-weight:500}
+.lista svg{flex:none;width:20px;height:20px}
+.tag{display:inline-block;margin-top:38px;font-size:13px;font-weight:500;letter-spacing:.02em;color:var(--ink-d);background:#fff;border:1px solid rgba(17,18,22,.1);border-radius:99px;padding:7px 16px;box-shadow:0 4px 14px -8px rgba(0,0,0,.15)}
+.tag i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);margin-right:8px;vertical-align:1px}
+.hero h1{margin:22px auto 0;max-width:920px;font-size:clamp(36px,4.6vw,60px);line-height:1.02;font-weight:600;letter-spacing:-.045em;text-wrap:balance}
+.hero h1 span{background:var(--grad-dark);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{margin:18px auto 0;max-width:560px;font-size:17.5px;line-height:1.5;color:var(--mut-d);font-weight:400;text-wrap:pretty}
+.hero p.sub b{color:var(--ink-d);font-weight:500}
+.hero .btn-wrap{margin-top:30px}
+.note{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;font-size:13px;color:var(--mut-d)}
+.note i{width:7px;height:7px;border-radius:50%;background:#1faa59}
+
+/* ============ FAIXA ============ */
+.faixa{position:relative;background:var(--grad-btn);overflow:hidden;padding:15px 0}
+.faixa-t{display:flex;width:max-content;animation:mq 55s linear infinite}
+.faixa span{white-space:nowrap;font-size:13px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:#1a0904;padding-right:.32em}
+.faixa i{font-style:normal;margin:0 1.1em;opacity:.6}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ============ O QUE VOCÊ RECEBE ============ */
+.recebe{position:relative;padding:80px 0 96px;overflow:hidden;background:var(--bg)}
+.mural{position:absolute;inset:-120px -40px;display:grid;grid-template-columns:repeat(6,1fr);gap:14px;opacity:.55;z-index:0}
+.col{display:grid;gap:14px;align-content:start;will-change:transform}
+.col:nth-child(even){margin-top:-110px}
+.post{position:relative;aspect-ratio:4/5;border-radius:10px;overflow:hidden;background:#101219;border:1px solid rgba(255,255,255,.04)}
+.post img{width:100%;height:100%;object-fit:cover;filter:grayscale(.3) brightness(.6)}
+.post .pt{position:absolute;left:12px;right:12px;bottom:12px;font-size:clamp(13px,1.3vw,19px);line-height:1.1;font-weight:500;letter-spacing:-.01em}
+.post .pt em{font-style:normal;color:var(--orange)}
+.post.t{display:flex;align-items:center;justify-content:center;text-align:center;padding:14px}
+.post.t .pt{position:static}
+.post.blue{background:linear-gradient(160deg,#0f1f45,#080b16)}
+.post.red{background:linear-gradient(160deg,#3a0a0e,#0f0507)}
+.veil{position:absolute;inset:0;z-index:1;pointer-events:none;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+  background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(7,8,11,.9),rgba(7,8,11,.72)),linear-gradient(180deg,var(--bg) 0%,transparent 14%,transparent 86%,var(--bg) 100%)}
+.recebe .c{position:relative;z-index:2}
+.tit{text-align:center;font-size:clamp(32px,4vw,50px);line-height:1.08;font-weight:500;letter-spacing:-.04em}
+.dgw{color:#e9e9ed}
+.dgb{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:500}
+.item{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:48px}
+.thumb{position:relative;aspect-ratio:16/10;border-radius:12px;overflow:hidden;background:#0b0c11;box-shadow:0 0 0 1px var(--line2),0 30px 60px -30px rgba(0,0,0,.9)}
+.thumb .ph{position:absolute;right:0;top:0;bottom:0;width:60%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 40%);mask-image:linear-gradient(90deg,transparent,#000 40%)}
+.thumb .ph img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+.thumb .lbl{position:absolute;left:26px;bottom:24px;z-index:2;max-width:40%}
+.thumb .lbl small{display:block;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gray)}
+.thumb .lbl strong{display:block;margin-top:6px;font-size:clamp(26px,2.6vw,34px);line-height:1.05;font-weight:500;letter-spacing:-.025em}
+.thumb .num{position:absolute;left:24px;top:18px;z-index:2;font-size:clamp(64px,7vw,96px);line-height:1;font-weight:300;letter-spacing:-.05em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.thumb .ico{position:absolute;right:22px;top:20px;z-index:2;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.06);border:1px solid var(--line2);backdrop-filter:blur(6px)}
+.thumb::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none}
+.thumb.mat{background:radial-gradient(ellipse at 75% 40%,rgba(255,162,31,.2),transparent 60%),#0b0c11}
+.pasta{position:absolute;right:6%;bottom:9%;width:48%;aspect-ratio:1/.78;perspective:700px}
+.p-back{position:absolute;inset:0;border-radius:4px 8px 8px 8px;background:linear-gradient(180deg,#e88a12,#c9620a)}
+.p-back::before{content:"";position:absolute;left:0;top:-9%;width:40%;height:12%;border-radius:6px 6px 0 0;background:#e88a12}
+.p-doc{position:absolute;left:12%;right:12%;bottom:8%;aspect-ratio:520/736;border-radius:3px;overflow:hidden;background:#fff;box-shadow:0 10px 24px -8px rgba(0,0,0,.6);transform:translateY(30%);transition:transform 1.1s var(--ease) .35s}
+.p-doc img{width:100%;height:100%;object-fit:cover;object-position:top}
+.p-doc.d2{left:20%;right:4%;transform:translateY(34%) rotate(4deg);transition-delay:.5s;filter:brightness(.92)}
+.pdf-tag{position:absolute;right:6px;top:6px;font-size:9px;font-weight:600;letter-spacing:.06em;color:#fff;background:#e3161b;border-radius:3px;padding:2px 5px}
+.p-front{position:absolute;left:0;right:0;bottom:0;height:72%;border-radius:6px 6px 8px 8px;background:linear-gradient(180deg,#ffbe4d,#ff8f1f);transform-origin:50% 100%;transition:transform .9s var(--ease) .15s;box-shadow:0 -6px 18px -8px rgba(0,0,0,.4) inset;display:flex;align-items:flex-end;justify-content:center;padding-bottom:9%}
+.p-front span{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(26,9,4,.75)}
+.mat.on .p-front{transform:rotateX(-34deg)}
+.mat.on .p-doc.d1{transform:translateY(-34%);animation:docf 4s ease-in-out 1.6s infinite}
+.mat.on .p-doc.d2{transform:translateY(-14%) rotate(6deg)}
+@keyframes docf{0%,100%{translate:0 0}50%{translate:0 -5px}}
+.foto-g .g-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.06);transition:transform 1.4s var(--ease)}
+.foto-g.on .g-img{transform:none}
+.foto-g::after{background:linear-gradient(90deg,rgba(7,8,11,.92) 0%,rgba(7,8,11,.5) 45%,rgba(7,8,11,0) 80%),linear-gradient(0deg,rgba(7,8,11,.6),transparent 50%)}
+.yt-card{background:radial-gradient(ellipse at 75% 30%,rgba(255,0,51,.16),transparent 60%),#0b0c11}
+.yt{position:absolute;right:-10%;top:11%;width:64%;z-index:2;border-radius:10px;overflow:hidden;background:#0f0f0f;box-shadow:-18px 22px 44px -12px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.1);transform:rotate(-3deg) translateY(14px);opacity:.6;transition:transform 1s var(--ease) .2s,opacity 1s var(--ease) .2s}
+.yt-card.on .yt{transform:rotate(-3deg);opacity:1}
+.yt-card .lbl{max-width:36%}
+.yt-card .lbl small{font-size:10px;letter-spacing:.1em;line-height:1.4}
+.yt-bar{display:flex;align-items:center;gap:10px;padding:7px 9px}
+.yt-logo{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;letter-spacing:-.02em;color:#fff}
+.yt-search{flex:1;height:13px;border-radius:99px;background:#222;border:1px solid #333;max-width:60%;margin-left:auto}
+.yt-vid{position:relative;aspect-ratio:16/9;background:#000}
+.yt-vid img{width:100%;height:100%;object-fit:cover}
+.yt-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);line-height:0;filter:drop-shadow(0 4px 10px rgba(0,0,0,.5))}
+.yt-prog{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.25)}
+.yt-prog i{display:block;height:100%;width:0;background:#ff0033}
+.yt-card.on .yt-prog i{animation:prog 9s linear .8s infinite}
+@keyframes prog{to{width:100%}}
+.yt-info{display:flex;gap:8px;align-items:flex-start;padding:8px 9px 9px}
+.yt-info img{width:20px;height:20px;border-radius:50%;flex:none}
+.yt-info b{font-size:9.5px;font-weight:500;line-height:1.3;color:#f1f1f1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.yt-info small{display:block;font-size:8.5px;color:#aaa;margin-top:2px}
+.pill{display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,.05);border:1px solid var(--line2);border-radius:99px;padding:4px 18px 4px 4px}
+.pill .dt{display:inline-flex;align-items:center;gap:8px;background:var(--grad-btn);color:#1a0904;font-weight:500;font-size:13.5px;border-radius:99px;padding:6px 13px 6px 6px}
+.pill .dt svg{flex:none}
+.pill p{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.item h3{margin-top:22px;font-size:clamp(23px,2.3vw,29px);line-height:1.2;font-weight:400;letter-spacing:-.02em}
+.item p.t{margin-top:16px;font-size:16px;line-height:1.6;color:var(--gray)}
+
+/* ============ PROFESSOR (igual ao print) ============ */
+.prof-w{position:relative;padding:76px 24px 10px;color:var(--ink-d);overflow:hidden;background:radial-gradient(ellipse 70% 60% at 50% 40%,var(--paper2) 0%,var(--paper) 70%)}
+.prof-w::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(17,18,22,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(17,18,22,.055) 1px,transparent 1px);background-size:56px 56px;background-position:center;-webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 45%,#000 30%,transparent 100%);mask-image:radial-gradient(ellipse 80% 70% at 50% 45%,#000 30%,transparent 100%)}
+.prof{position:relative;max-width:1100px;margin:0 auto}
+.prof-bg{position:absolute;left:50%;top:40px;width:640px;height:420px;margin-left:-320px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,138,38,.16),transparent);z-index:0}
+.palco{position:relative;z-index:1;height:470px}
+.foto{position:absolute;left:50%;top:0;width:380px;margin-left:-190px;z-index:50;
+  height:430px;border-radius:18px;overflow:hidden;box-shadow:0 40px 70px -35px rgba(17,18,22,.55),0 0 0 1px rgba(17,18,22,.06)}
+.foto img{width:100%;height:100%;object-fit:cover;object-position:center 12%}
+.arc{position:absolute;z-index:55;left:50%;top:22px;width:300px;height:300px;margin-left:-150px;pointer-events:none}
+.arc text{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.24em;fill:rgba(255,255,255,.85);text-transform:uppercase}
+.ring-w{position:absolute;left:50%;top:215px;width:0;height:0}
+.ring .vc{position:absolute;left:-100px;top:-60px;width:200px;height:120px;border-radius:10px;overflow:hidden;background:#11131a;will-change:transform,opacity;
+  box-shadow:0 18px 34px -16px rgba(17,18,22,.5),0 0 0 1px rgba(17,18,22,.08)}
+.ring .vc video{width:100%;height:100%;object-fit:cover;display:block}
+.prof .c{position:relative;z-index:4;max-width:1000px}
+.div{height:1px;background:rgba(17,18,22,.12)}
+.prof-tit{padding:28px 0;text-align:center}
+.selecionado{--bg-position:100%;display:inline-block;font-size:clamp(34px,5.2vw,62px);font-weight:600;letter-spacing:-.045em!important;text-transform:uppercase;letter-spacing:-.03em;line-height:1;
+  background-image:linear-gradient(90deg,#111216 0 50%,rgba(17,18,22,.16) 50% 100%);background-size:200% 100%;background-position:var(--bg-position) 0;
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.prof-txt{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:34px}
+.prof-txt p{font-size:17px;line-height:1.6;color:var(--mut-d);font-weight:400}
+.prof-foot{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-top:48px;padding-bottom:36px}
+.selo{display:flex;align-items:center;gap:12px}
+.selo img{width:46px}
+.selo small{display:block;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--mut-d)}
+.selo b{display:block;font-size:17px;font-weight:600;line-height:1.15;letter-spacing:-.01em}
+.prof-foot .lista li{color:var(--ink-d)}
+
+.selecionado.s2{background-image:linear-gradient(90deg,transparent 0 50%,rgba(205,205,203,.95) 50% 100%),linear-gradient(90deg,#f08a00 0%,#ff4a26 55%,#d0101a 100%);background-size:200% 100%,100% 100%;background-position:var(--bg-position) 0,0 0}
+/* depoimentos em vídeo */
+.deps-w{position:relative;z-index:2;margin-top:90px}
+.deps{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:34px 20px 14px;scrollbar-width:none}
+.dep:first-child{margin-left:auto}.dep:last-child{margin-right:auto}
+.deps::-webkit-scrollbar{display:none}
+.dep{flex:none;width:176px;aspect-ratio:9/16;position:relative;border-radius:18px;overflow:hidden;background:#0b0c12;scroll-snap-align:center;cursor:pointer;isolation:isolate;box-shadow:0 26px 50px -26px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.06)}
+.dep video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#0b0c12}
+.dep::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,transparent 28%,transparent 56%,rgba(0,0,0,.88) 100%);pointer-events:none;transition:opacity .3s}
+.dep .rec{position:absolute;left:12px;top:12px;z-index:2;display:flex;align-items:center;gap:7px;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:9.5px;font-weight:700;letter-spacing:.1em;color:#fff}
+.dep .rec::before{content:"";width:8px;height:8px;border-radius:50%;background:#ff2d3a;box-shadow:0 0 8px #ff2d3a;animation:blink 1.4s steps(2) infinite}
+@keyframes blink{50%{opacity:.25}}
+.dep .play{position:absolute;left:50%;top:44%;z-index:2;width:50px;height:50px;margin:-25px 0 0 -25px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:grid;place-items:center;transition:transform .3s var(--ease),opacity .3s}
+.dep .play::before{content:"";margin-left:4px;border-left:14px solid #fff;border-top:9px solid transparent;border-bottom:9px solid transparent}
+.dep:hover .play{transform:scale(1.08)}
+.dep .cap{position:absolute;left:12px;right:12px;bottom:12px;z-index:2;transition:opacity .3s}
+.dep .idib{display:inline-block;margin-bottom:8px;font-size:9.5px;font-weight:600;letter-spacing:.06em;color:#1a0904;background:var(--grad-btn);border-radius:99px;padding:4px 11px}
+.dep .cap b{display:block;font-size:15.5px;font-weight:600;letter-spacing:-.01em;color:#fff}
+.dep .cap small{display:block;margin-top:2px;font-size:12.5px;font-weight:500;color:var(--gold)}
+.dep .ouvir{display:inline-flex;align-items:center;gap:5px;margin-top:9px;font-size:11px;font-weight:600;color:#fff;background:rgba(255,255,255,.14);border-radius:99px;padding:6px 12px;backdrop-filter:blur(6px)}
+.dep.playing::after,.dep.playing .play,.dep.playing .cap{opacity:0}
+.dep:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+/* transição em "aba" entre a seção escura e a clara */
+.notch{position:absolute;left:50%;top:-1px;margin-left:-66px;z-index:6;line-height:0}
+.notch .ar{animation:dn 1.8s ease-in-out infinite}
+@keyframes dn{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+footer{position:relative;padding:26px 20px 30px;text-align:center;font-size:12.5px;letter-spacing:.02em;color:var(--mut-d);background:var(--paper);border-top:1px solid rgba(17,18,22,.08)}
+
+/* ============ EFEITOS DE SCROLL (suaves) ============ */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.bl{opacity:0;filter:blur(8px);transform:translateY(14px);transition:opacity 1s var(--ease),filter 1s var(--ease),transform 1s var(--ease)}
+.on{opacity:1;transform:none;filter:none}
+.dl1{transition-delay:.08s}.dl2{transition-delay:.16s}.dl3{transition-delay:.24s}
+.hero .rv{animation:up .9s var(--ease) forwards}
+@keyframes up{to{opacity:1;transform:none}}
+
+/* ============ POPUP ============ */
+.popup{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(5,6,9,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.popup.popup-ativo{opacity:1;visibility:visible}
+.pbox{position:relative;width:100%;max-width:500px;max-height:calc(100svh - 32px);overflow:auto;border-radius:16px;padding:36px 30px 26px;background:#fff;color:var(--ink-d);box-shadow:0 40px 100px -30px rgba(0,0,0,.8);transform:translateY(16px);transition:transform .4s var(--ease)}
+.popup-ativo .pbox{transform:none}
+.fechar{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#777;transition:background .2s}
+.fechar:hover{background:#f1f1ef;color:#111}
+.pbox{text-align:center;max-width:420px;padding:34px 28px 26px}
+.rd-ic{display:flex;align-items:center;justify-content:center;gap:16px}
+.rd-av{width:64px;height:64px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #fff,0 0 0 3px rgba(255,74,38,.55)}
+.rd-logo{width:48px;height:auto}
+.rd-dots{display:flex;gap:5px}
+.rd-dots i{width:6px;height:6px;border-radius:50%;background:#ff7a26;opacity:.25;animation:rdd 1.2s infinite}
+.rd-dots i:nth-child(2){animation-delay:.2s}.rd-dots i:nth-child(3){animation-delay:.4s}
+@keyframes rdd{40%{opacity:1;transform:translateY(-2px)}}
+.pbox h2{margin-top:20px;font-size:21px;line-height:1.25;font-weight:500;letter-spacing:-.02em}
+.rd-bar{height:4px;margin-top:22px;border-radius:9px;background:#ececea;overflow:hidden}
+.rd-bar i{display:block;height:100%;width:0;background:var(--grad-btn);border-radius:9px}
+.popup-ativo .rd-bar i{animation:rdb 2.6s linear forwards}
+@keyframes rdb{to{width:100%}}
+.rd-link{display:inline-block;margin-top:14px;font-size:12.5px;color:var(--mut-d);text-decoration:underline;text-underline-offset:3px}
+/* ============ RESPONSIVO ============ */
+
+@media (max-width:767px){
+  .c{padding:0 20px}
+  .hero{min-height:auto;padding:52px 0 60px}
+  .hero .c{padding:0 14px}
+  .hero::before{background-size:40px 40px}
+  .hero-top{flex-wrap:nowrap;gap:9px}
+  .vline{height:30px}
+  .av,.av img{width:40px;height:40px}
+  .av svg{width:15px;height:15px}
+  .perfil{gap:8px}
+  .perfil b{font-size:11.5px;white-space:nowrap}
+  .perfil small{font-size:8.5px;letter-spacing:.06em}
+  .hero-top .lista{gap:5px}
+  .hero-top .lista li{font-size:11px;gap:5px;white-space:nowrap}
+  .hero-top .lista svg{width:14px;height:14px}
+  .tag{margin-top:26px;font-size:12px}
+  .tit{font-size:clamp(28px,8vw,36px)}
+  .deps-w{margin-top:64px}
+  .dep{width:158px}
+  .hero h1{font-size:clamp(32px,9.4vw,42px)}
+  .hero .btn-wrap{display:block}
+  .cur{left:auto;right:-6px;top:58%}
+  .mini-logo{width:28px}
+  .prof-w{padding:64px 0 10px}
+  .hero p.sub{font-size:16px}
+  .btn{width:100%;font-size:14px;padding:17px 18px;letter-spacing:.02em}
+  .faixa{padding:12px 0}.faixa span{font-size:11px;letter-spacing:.26em}
+  .recebe{padding:72px 0 80px}
+  .mural{grid-template-columns:repeat(3,1fr);inset:-80px -60px}
+  .mural .col:nth-child(n+4){display:none}
+  .item{grid-template-columns:1fr;gap:26px;margin-top:50px}
+  .item .txt{text-align:center}
+  .palco{height:380px}
+  .foto{width:280px;margin-left:-140px;height:340px}
+  .arc{width:220px;height:220px;margin-left:-110px;top:14px}
+  .ring .vc{left:-42px;top:-25px;width:84px;height:50px;border-radius:5px}
+  .yt-card{aspect-ratio:16/10}
+  .yt-info{padding:7px 8px 8px;gap:7px}
+  .yt-info img{width:18px;height:18px}
+  .yt-info b{font-size:9.5px}
+  .yt-info small{font-size:8.5px}
+  .yt{width:68%;right:-9%;top:11%;box-shadow:-18px 20px 40px -12px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.1)}
+  .yt-card .lbl{max-width:36%}
+  .yt-card .lbl strong{font-size:20px}
+  .yt-card .lbl small{font-size:8.5px;letter-spacing:.06em}
+  .thumb .lbl{max-width:42%;left:20px;bottom:18px}
+  .thumb .num{left:20px;top:14px}
+  .thumb .lbl strong{font-size:22px}
+  .thumb .lbl small{font-size:9.5px;letter-spacing:.1em;line-height:1.35}
+  .thumb .num{font-size:58px}
+  .pasta{width:50%;right:5%;bottom:8%}
+  .mat.on .p-doc.d1{transform:translateY(-20%)}
+  .mat.on .p-doc.d2{transform:translateY(-4%) rotate(6deg)}
+  .ring-w{top:165px}
+  .feed div{padding:7px 9px;font-size:10.5px;gap:7px}.feed{gap:6px;width:48%}
+  .arc text{font-size:12px}
+  .prof-txt{grid-template-columns:1fr;gap:16px;margin-top:28px}
+  .prof-txt p{font-size:16px;text-align:center}
+  .prof-foot{flex-direction:column;text-align:center;margin-top:40px;padding-bottom:40px}
+  .prof-foot .btn-wrap{width:100%}
+  .prof-foot .lista{justify-items:center}
+  .pbox{padding:32px 20px 22px}
+}
+@media (max-width:440px){.hm{display:none}}
+@media (max-width:380px){.yt{right:-17%;top:14%}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv,.bl{opacity:1;transform:none;filter:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="c">
+    <div class="hero-top rv">
+      <div class="perfil">
+        <div class="av">
+          <img src="img/avatar-ismael.webp" alt="" width="192" height="192">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#2f7bff" d="M12 1l2.6 2.2 3.4-.4.9 3.3 3 1.7-1.2 3.2 1.2 3.2-3 1.7-.9 3.3-3.4-.4L12 23l-2.6-2.2-3.4.4-.9-3.3-3-1.7 1.2-3.2L2.1 9.8l3-1.7.9-3.3 3.4.4z"/><path d="M7.6 12.2l3 3 5.8-6" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div><b>Ismael Souto</b><small>Instituto Souto</small></div>
+      </div>
+      <span class="vline"></span>
+      <img class="mini-logo" src="img/logo-gcm-angra.webp" alt="Brasão da Guarda Civil Municipal de Angra dos Reis" width="185" height="240">
+      <span class="vline"></span>
+      <ul class="lista">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#gw)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/><defs><linearGradient id="gw" x1="0" x2="24" y1="0" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#f08a00"/><stop offset="1" stop-color="#e3161b"/></linearGradient></defs></svg><span>Grupo <span class="hm">gratuito </span>no WhatsApp</span></li>
+        <li><svg viewBox="0 0 21 15" aria-hidden="true"><path fill="url(#gy)" d="M19.76 2.21A2.53 2.53 0 0 0 17.98.43C16.4 0 10.09 0 10.09 0S3.77 0 2.19.42A2.58 2.58 0 0 0 .42 2.21C0 3.79 0 7.06 0 7.06s0 3.29.42 4.85a2.53 2.53 0 0 0 1.78 1.78c1.6.43 7.89.43 7.89.43s6.31 0 7.89-.41a2.53 2.53 0 0 0 1.78-1.78c.42-1.58.42-4.85.42-4.85s.02-3.29-.42-4.87zM8.08 10.09V4.04l5.25 3.02-5.25 3.03z"/><defs><linearGradient id="gy" x1="0" x2="20" y1="0" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#f08a00"/><stop offset="1" stop-color="#e3161b"/></linearGradient></defs></svg><span>Aulas <span class="hm">gratuitas </span>no YouTube</span></li>
+      </ul>
+    </div>
+
+    <p class="tag rv dl1"><i></i>Concurso da GCM de Angra dos Reis/RJ</p>
+    <h1 class="rv dl2"><span>O seu caminho para a aprovação</span> na GCM de Angra dos Reis começa aqui!</h1>
+    <p class="sub rv dl2">Entre no grupo de WhatsApp do <b>Instituto Souto</b> e receba gratuitamente o material para o <b>1º concurso da Guarda Civil Municipal de Angra dos Reis</b>.</p>
+    <div class="btn-wrap rv dl3"><button class="btn abrir" type="button">Entre no grupo de WhatsApp para receber o material <svg width="13" height="14" viewBox="0 0 14 15" fill="none" aria-hidden="true"><path d="M1.2 13.52 13.25 1.48M13.25 1.48H1.69m11.56 0v11.56" stroke="#1a0904" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="cur" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M3.5 2.8 20 10.2l-7.1 2.2-2.7 7.3z" fill="#ff6a1a" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><b>Você</b></span></div>
+    <p class="note rv dl3"><i></i>100% gratuito &amp; online</p>
+  </div>
+</section>
+
+<!-- ================= FAIXA ================= -->
+<div class="faixa" aria-hidden="true"><div class="faixa-t" id="fx"></div></div>
+
+<!-- ================= O QUE VOCÊ RECEBE ================= -->
+<section class="recebe">
+  <div class="mural" id="mural" aria-hidden="true"></div>
+  <div class="veil"></div>
+  <div class="c">
+    <h2 class="tit rv"><span class="dgw">O que você recebe</span> <span class="dgb">ao acessar o grupo:</span></h2>
+
+    <div class="item">
+      <div class="thumb mat bl">
+        <div class="pasta" aria-hidden="true">
+          <div class="p-back"></div>
+          <div class="p-doc d2"><img src="img/pdf-pagina.webp" alt="" width="520" height="736" loading="lazy"></div>
+          <div class="p-doc d1"><img src="img/pdf-capa.webp" alt="" width="520" height="736" loading="lazy"><span class="pdf-tag">PDF</span></div>
+          <div class="p-front"><span>Simulado GCM Angra</span></div>
+        </div>
+        <div class="num">01</div>
+        <div class="lbl"><small>Gratuito</small><strong>Materiais<br>de estudo</strong></div>
+      </div>
+      <div class="txt">
+        <div class="rv"><div class="pill"><span class="dt"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M8 6.5h5.5L16 9v8.5H8z M13.5 6.5V9H16" fill="none" stroke="#1a0904" stroke-width="1.4" stroke-linejoin="round"/></svg>PDFs</span><p>Direto no seu WhatsApp</p></div></div>
+        <h3 class="rv dl1"><span class="dgw">Materiais de estudos</span> <span class="dgb">gratuitos</span></h3>
+        <p class="t rv dl2">Conteúdo organizado pelo edital da GCM de Angra dos Reis para você estudar o que realmente cai na prova da banca IDIB.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="thumb foto-g bl">
+        <img class="g-img" src="img/guardas-municipais.webp" alt="" width="474" height="266" loading="lazy">
+        <div class="num">02</div>
+        <div class="lbl"><small>Em primeira mão</small><strong>Notícias do<br>concurso</strong></div>
+      </div>
+      <div class="txt">
+        <div class="rv"><div class="pill"><span class="dt"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M12 7v5.5M12 15.6v.4" stroke="#1a0904" stroke-width="1.8" stroke-linecap="round"/></svg>Avisos</span><p>Prazos e novidades do edital</p></div></div>
+        <h3 class="rv dl1"><span class="dgw">Notícias sobre</span> <span class="dgb">o concurso</span></h3>
+        <p class="t rv dl2">Inscrições, retificações, locais de prova e cada novidade do concurso avisados no grupo assim que saírem.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="thumb yt-card bl">
+        <div class="yt" aria-hidden="true">
+          <div class="yt-bar"><span class="yt-logo"><svg width="17" height="12" viewBox="0 0 21 15"><path fill="#ff0033" d="M19.76 2.21A2.53 2.53 0 0 0 17.98.43C16.4 0 10.09 0 10.09 0S3.77 0 2.19.42A2.58 2.58 0 0 0 .42 2.21C0 3.79 0 7.06 0 7.06s0 3.29.42 4.85a2.53 2.53 0 0 0 1.78 1.78c1.6.43 7.89.43 7.89.43s6.31 0 7.89-.41a2.53 2.53 0 0 0 1.78-1.78c.42-1.58.42-4.85.42-4.85s.02-3.29-.42-4.87z"/><path fill="#fff" d="M8.08 10.09V4.04l5.25 3.02-5.25 3.03z"/></svg>YouTube</span><span class="yt-search"></span></div>
+          <div class="yt-vid"><img src="img/youtube-aula-gcm.webp" alt="" width="800" height="450" loading="lazy"><span class="yt-play"><svg width="30" height="21" viewBox="0 0 21 15"><path fill="#ff0033" d="M19.76 2.21A2.53 2.53 0 0 0 17.98.43C16.4 0 10.09 0 10.09 0S3.77 0 2.19.42A2.58 2.58 0 0 0 .42 2.21C0 3.79 0 7.06 0 7.06s0 3.29.42 4.85a2.53 2.53 0 0 0 1.78 1.78c1.6.43 7.89.43 7.89.43s6.31 0 7.89-.41a2.53 2.53 0 0 0 1.78-1.78c.42-1.58.42-4.85.42-4.85s.02-3.29-.42-4.87z"/><path fill="#fff" d="M8.08 10.09V4.04l5.25 3.02-5.25 3.03z"/></svg></span><span class="yt-prog"><i></i></span></div>
+          <div class="yt-info"><img src="img/avatar-ismael.webp" alt="" width="192" height="192" loading="lazy"><div><b>Concurso Guarda Municipal de Angra dos Reis - Como ser Aprovado</b><small>Prof Ismael Souto</small></div></div>
+        </div>
+        <div class="num">03</div>
+        
+        <div class="lbl"><small>Com o Prof. Ismael</small><strong>Aulas no<br>YouTube</strong></div>
+      </div>
+      <div class="txt">
+        <div class="rv"><div class="pill"><span class="dt"><svg width="22" height="22" viewBox="0 0 27 27" aria-hidden="true"><circle cx="13.5" cy="13.5" r="13.5" fill="#fff"/><path d="M11 9.4v8.2l7.4-4.1z" fill="#1a0904"/></svg>Aulas</span><p>Gratuitas no YouTube</p></div></div>
+        <h3 class="rv dl1"><span class="dgw">Aulas gratuitas</span> <span class="dgb">no YouTube</span></h3>
+        <p class="t rv dl2">Aulas com o Prof. Ismael Souto para você sair do zero e estudar com estratégia rumo à sua vaga na Guarda.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="deps-w">
+    <div class="c"><h2 class="tit rv">O que dizem <span class="dgb">os aprovados</span></h2></div>
+    <div class="deps rv dl1" id="deps"></div>
+  </div>
+</section>
+
+<!-- ================= PROFESSOR ================= -->
+<div class="prof-w">
+  <div class="notch" aria-hidden="true"><svg width="132" height="34" viewBox="0 0 132 34"><path d="M0 0H132C112 0 106 34 84 34H48C26 34 20 0 0 0Z" fill="#07080b"/><path class="ar" d="M66 9v13m-5-5 5 5 5-5" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <section class="prof">
+    <div class="palco">
+      <div class="ring-w" aria-hidden="true"><div class="ring" id="ring"></div></div>
+      <div class="prof-bg"></div>
+      <svg class="arc" viewBox="0 0 300 300" aria-hidden="true"><defs><path id="ar1" d="M44,190 A110,110 0 0 1 128,42"/><path id="ar2" d="M172,42 A110,110 0 0 1 256,190"/></defs><text><textPath href="#ar1" startOffset="4%">Instituto Souto</textPath></text><text><textPath href="#ar2" startOffset="14%">Ismael Souto</textPath></text></svg>
+      <div class="foto"><img src="img/prof-ismael.webp" alt="Prof. Ismael Souto" width="720" height="900" loading="lazy"></div>
+    </div>
+
+    <div class="c">
+      <div class="div"></div>
+      <div class="prof-tit"><h2><span class="selecionado s1">Quem será seu&nbsp;</span><span class="selecionado s2">professor?</span></h2></div>
+      <div class="div"></div>
+      <div class="prof-txt">
+        <p class="rv">Ismael Souto é professor especialista em carreiras policiais e fundador do Instituto Souto. Aprovado para Soldado PM, Oficial PM e Sargento da Aeronáutica, sabe na prática o que é estudar para vestir uma farda.</p>
+        <p class="rv dl1">Já ajudou mais de 4.000 alunos a conquistarem a aprovação. No grupo do WhatsApp, ele vai te guiar com materiais, notícias e aulas gratuitas para você conquistar sua vaga na GCM de Angra dos Reis.</p>
+      </div>
+      <div class="prof-foot">
+        <div class="selo rv"><img src="img/logo-gcm-angra.webp" alt="Brasão da GCM de Angra dos Reis" width="141" height="194" loading="lazy"><div><small>Concurso</small><b>GCM Angra<br>dos Reis</b></div></div>
+        <div class="btn-wrap rv dl1"><button class="btn abrir" type="button">Quero entrar no grupo <svg width="13" height="14" viewBox="0 0 14 15" fill="none" aria-hidden="true"><path d="M1.2 13.52 13.25 1.48M13.25 1.48H1.69m11.56 0v11.56" stroke="#1a0904" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="cur" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M3.5 2.8 20 10.2l-7.1 2.2-2.7 7.3z" fill="#ff6a1a" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><b>Você</b></span></div>
+        <ul class="lista rv dl2">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#gw)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>Grupo gratuito no WhatsApp</li>
+          <li><svg viewBox="0 0 21 15" aria-hidden="true"><path fill="url(#gy)" d="M19.76 2.21A2.53 2.53 0 0 0 17.98.43C16.4 0 10.09 0 10.09 0S3.77 0 2.19.42A2.58 2.58 0 0 0 .42 2.21C0 3.79 0 7.06 0 7.06s0 3.29.42 4.85a2.53 2.53 0 0 0 1.78 1.78c1.6.43 7.89.43 7.89.43s6.31 0 7.89-.41a2.53 2.53 0 0 0 1.78-1.78c.42-1.58.42-4.85.42-4.85s.02-3.29-.42-4.87zM8.08 10.09V4.04l5.25 3.02-5.25 3.03z"/></svg>Aulas gratuitas no YouTube</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>© <span id="ano">2026</span> INSTITUTOSOUTO • Todos os direitos reservados</footer>
+
+<!-- ================= POPUP ================= -->
+<div class="popup" id="popup" role="dialog" aria-modal="true" aria-labelledby="ptit" aria-hidden="true">
+  <div class="pbox">
+    <button class="fechar" type="button" aria-label="Fechar"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 1l12 12M13 1 1 13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+    <div class="rd-ic">
+      <img class="rd-av" src="img/avatar-ismael.webp" alt="Prof. Ismael Souto" width="192" height="192">
+      <span class="rd-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <img class="rd-logo" src="img/logo-gcm-angra.webp" alt="Brasão da GCM de Angra dos Reis" width="185" height="240">
+    </div>
+    <h2 id="ptit">Você está sendo redirecionado para o nosso grupo gratuito</h2>
+    <div class="rd-bar" aria-hidden="true"><i></i></div>
+    <a class="rd-link" id="rdLink" href="#">Não foi redirecionado? Toque aqui</a>
+  </div>
+</div>
+
+<script>
+{
+/* ===== CONFIGURE AQUI ===== */
+const REDIRECT_URL = "https://chat.whatsapp.com/KOwDiOFSX9vFgGQ3omphWn"; // link do grupo do WhatsApp
+const VIDEO_BASE = "https://angradosreis.institutosouto.com.br/video/"; // vídeos da plataforma (do site do Angra)
+/* depoimentos em vídeo (hospedados no site oficial do Instituto Souto) */
+const DEP_BASE = "https://siteoficial.institutosouto.com.br/";
+const DEPOS = [
+  { tag: "Banca IDIB", t: "Aprovado", s: "GM Duque de Caxias" },
+  { tag: "Banca IDIB", t: "Aprovada", s: "GM Duque de Caxias" },
+  { t: "Aprovado", s: "Instituto Souto" },
+  { t: "Aprovado", s: "Instituto Souto" },
+  { t: "Aprovada", s: "Instituto Souto" },
+  { t: "Aprovado", s: "Instituto Souto" }
+]; // pasta dos vídeos da plataforma (01.mp4 ... 08.mp4)
+/* ========================== */
+
+document.getElementById("ano").textContent = new Date().getFullYear();
+/* depoimentos */
+const deps = document.getElementById("deps");
+deps.innerHTML = DEPOS.map((d, i) => `<figure class="dep" tabindex="0" role="button" aria-label="Ouvir depoimento: ${d.t} ${d.s}">
+  <video playsinline preload="none" poster="${DEP_BASE}img/dep${i + 1}-poster.webp" data-src="${DEP_BASE}video/dep${i + 1}.mp4"></video>
+  <span class="rec">REC · CAM 0${i + 1}</span><span class="play"></span>
+  <figcaption class="cap">${d.tag ? `<span class="idib">${d.tag.toUpperCase()}</span>` : ""}<b>${d.t}</b><small>${d.s}</small><span class="ouvir">🔊 Toque para ouvir</span></figcaption>
+</figure>`).join("");
+const depCards = [...deps.querySelectorAll(".dep")];
+const toggleDep = card => {
+  const v = card.querySelector("video");
+  depCards.forEach(c => { if (c !== card) { c.querySelector("video").pause(); c.classList.remove("playing"); } });
+  if (!v.src) v.src = v.dataset.src;
+  if (v.paused) { v.play().then(() => card.classList.add("playing")).catch(() => {}); }
+  else { v.pause(); card.classList.remove("playing"); }
+};
+depCards.forEach(c => {
+  c.addEventListener("click", () => toggleDep(c));
+  c.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleDep(c); } });
+  c.querySelector("video").addEventListener("ended", () => c.classList.remove("playing"));
+});
+
+/* faixa */
+const fx = "Materiais gratuitos<i>•</i>Notícias do concurso<i>•</i>Aulas no YouTube<i>•</i>GCM Angra dos Reis<i>•</i>";
+document.getElementById("fx").innerHTML = ("<span>" + fx.repeat(4) + "</span>").repeat(2);
+
+/* mural de fundo */
+const P = [["img","","Saiu o <em>edital</em>"],["t","red","1º concurso da <em>história</em>"],["t","blue","200 <em>vagas</em>"],["img","r","Banca <em>IDIB</em>"],
+  ["t","","R$ 5.033,95"],["t","blue","Sem limite de <em>idade</em>"],["img","l","Grupo <em>gratuito</em>"],["t","red","Prova <em>24/01</em>"],
+  ["t","","Nível <em>médio</em>"],["img","","+4.000 <em>aprovados</em>"],["t","blue","GCM <em>Angra</em>"],["t","red","Comece <em>hoje</em>"]];
+const tile = ([k,a,txt]) => k === "img"
+  ? `<div class="post"><img src="img/prof-ismael.webp" alt="" loading="lazy" style="object-position:${a==="r"?"75%":a==="l"?"25%":"50%"} 15%"><div class="pt">${txt}</div></div>`
+  : `<div class="post t ${a}"><div class="pt">${txt}</div></div>`;
+document.getElementById("mural").innerHTML = [0,1,2,3,4,5].map(c =>
+  `<div class="col" data-speed="${[.05,-.04,.07,-.06,.04,-.05][c]}">${P.filter((_,i)=>i%6===c).concat(P.filter((_,i)=>(i+2)%6===c),P.filter((_,i)=>(i+4)%6===c)).map(tile).join("")}</div>`).join("");
+
+/* anel de vídeos atrás do professor */
+const ring = document.getElementById("ring"), N = 8;
+ring.innerHTML = Array.from({length: N}, (_, i) => `<div class="vc" data-i="${i}"><video muted loop playsinline preload="none" data-src="${VIDEO_BASE}${String(i + 1).padStart(2, "0")}.mp4"></video></div>`).join("");
+const cards = [...ring.querySelectorAll(".vc")];
+const reduceM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let ang = 0, orbOn = false, lastT = 0;
+function orbit(t){
+  const dt = lastT ? Math.min(50, t - lastT) : 16; lastT = t;
+  if (!reduceM) ang += dt * 0.00016;
+  const m = innerWidth < 768, cw = m ? 84 : 200, RX = Math.max(60, Math.min(m ? 150 : 360, document.querySelector('.palco').clientWidth / 2 - cw / 2 - 8)), RY = m ? 30 : 70;
+  cards.forEach((c, i) => {
+    const a = ang + i * Math.PI * 2 / N, s = Math.sin(a), k = (1 + s) / 2; /* k=1 embaixo (mais perto), 0 no alto (mais atrás) */
+    c.style.transform = `translate3d(${(Math.cos(a) * RX).toFixed(1)}px,${(s * RY - Math.cos(a) * RX * .14).toFixed(1)}px,0) scale(${(.62 + .38 * k).toFixed(3)})`;
+    c.style.opacity = (.35 + .65 * k).toFixed(2);
+    c.style.zIndex = k > .5 ? 60 + Math.round(k * 30) : 10 + Math.round(k * 30); /* metade da frente passa na frente dele */
+    c.style.filter = `blur(${((1 - k) * 1.6).toFixed(2)}px)`;
+  });
+  if (orbOn) requestAnimationFrame(orbit);
+}
+orbit(0);
+const vio = new IntersectionObserver(es => es.forEach(e => {
+  ring.querySelectorAll("video").forEach(v => {
+    if (e.isIntersecting) { if (!v.src) v.src = v.dataset.src; v.play().catch(() => {}); } else v.pause();
+  });
+  if (e.isIntersecting && !orbOn) { orbOn = true; lastT = 0; requestAnimationFrame(orbit); } else if (!e.isIntersecting) orbOn = false;
+}), { rootMargin: "200px 0px" });
+vio.observe(document.querySelector(".palco"));
+
+/* aparecer ao rolar */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -10% 0px" });
+document.querySelectorAll(".recebe .rv, .recebe .bl, .deps-w .rv, .prof .rv").forEach(el => io.observe(el));
+
+/* contadores */
+const cio = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return; cio.unobserve(e.target);
+  const cnt = e.target, to = +cnt.dataset.to, t0 = performance.now();
+  const step = t => { const p = Math.min(1, (t - t0) / 1600), v = Math.round(to * (1 - Math.pow(1 - p, 3))); cnt.textContent = v.toLocaleString("pt-BR"); if (p < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}), { threshold: .6 });
+document.querySelectorAll(".count").forEach(c => cio.observe(c));
+
+/* título do professor preenchendo com o scroll + parallax leve */
+const sel1 = document.querySelector(".selecionado.s1"), sel2 = document.querySelector(".selecionado.s2");
+const par = document.querySelectorAll("[data-speed]");
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function frame(){
+  const vh = innerHeight, r = sel1.getBoundingClientRect();
+  let p = (vh - r.top) / (vh * .55); p = Math.max(0, Math.min(1, p));
+  const p1 = Math.min(1, p / .55), p2 = Math.max(0, Math.min(1, (p - .5) / .5));
+  sel1.style.setProperty("--bg-position", (100 - 100 * p1) + "%");
+  sel2.style.setProperty("--bg-position", (100 - 100 * p2) + "%");
+  if (reduce) return;
+  par.forEach(el => {
+    const b = el.parentElement.getBoundingClientRect(), mid = b.top + b.height / 2 - vh / 2;
+    el.style.transform = `translate3d(0,${(-mid * parseFloat(el.dataset.speed)).toFixed(1)}px,0)`;
+  });
+}
+let tk = false;
+addEventListener("scroll", () => { if (!tk) { tk = true; requestAnimationFrame(() => { frame(); tk = false; }); } }, { passive: true });
+addEventListener("resize", frame);
+frame();
+
+/* popup */
+const popup = document.getElementById("popup");
+let lastFocus = null, rdT = 0;
+const abrir = () => { lastFocus = document.activeElement; popup.classList.add("popup-ativo"); popup.setAttribute("aria-hidden","false"); document.body.style.overflow = "hidden"; clearTimeout(rdT); rdT = setTimeout(() => { location.href = REDIRECT_URL; }, 2600); };
+const fechar = () => { clearTimeout(rdT); popup.classList.remove("popup-ativo"); popup.setAttribute("aria-hidden","true"); document.body.style.overflow = ""; lastFocus && lastFocus.focus(); };
+document.querySelectorAll(".abrir").forEach(b => b.addEventListener("click", abrir));
+document.querySelector(".fechar").addEventListener("click", fechar);
+popup.addEventListener("click", e => { if (e.target === popup) fechar(); });
+addEventListener("keydown", e => { if (e.key === "Escape" && popup.classList.contains("popup-ativo")) fechar(); });
+
+document.getElementById("rdLink").href = REDIRECT_URL;
+
+}
+</script>
+</body>
+</html>
