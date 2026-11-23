@@ -37,19 +37,20 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 :focus-visible{outline:2px solid var(--orange);outline-offset:3px}
 
 /* ============ BOTÃO ============ */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--grad-btn);color:#1a0904;
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(100deg,#2fe073 0%,#25d366 45%,#14a952 100%);color:#fff;text-shadow:0 1px 1px rgba(0,60,20,.25);
   font-size:15px;font-weight:500;letter-spacing:.03em;text-transform:uppercase;padding:17px 30px;border-radius:6px;
-  box-shadow:0 10px 28px -12px rgba(255,74,38,.55);transition:transform .35s var(--ease),box-shadow .35s var(--ease),filter .35s}
+  box-shadow:0 10px 28px -12px rgba(37,211,102,.6);transition:transform .35s var(--ease),box-shadow .35s var(--ease),filter .35s}
 .btn svg{transition:transform .35s var(--ease)}
-.btn:hover{transform:translateY(-2px);filter:brightness(1.04);box-shadow:0 16px 34px -12px rgba(255,74,38,.7)}
-.btn:hover svg{transform:translate(2px,-2px)}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.04);box-shadow:0 16px 34px -12px rgba(37,211,102,.75)}
+.btn .wa-ic{flex:none;filter:drop-shadow(0 1px 1px rgba(0,60,20,.25))}
+.btn:hover .wa-ic{transform:rotate(-8deg) scale(1.06)}
 
 /* cursor "Você" clicando no botão */
 .btn-wrap{position:relative;display:inline-block}
 .btn{position:relative;animation:brilho 2.6s ease-in-out infinite}
 .btn-wrap .btn{animation:press 4.6s var(--ease) infinite,brilho 2.6s ease-in-out infinite}
 .btn::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;animation:pisca 2.6s ease-out infinite}
-@keyframes pisca{0%{box-shadow:0 0 0 0 rgba(255,106,26,.45)}70%,100%{box-shadow:0 0 0 12px rgba(255,106,26,0)}}
+@keyframes pisca{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%,100%{box-shadow:0 0 0 12px rgba(37,211,102,0)}}
 @keyframes brilho{50%{filter:brightness(1.08) saturate(1.05)}}
 .cur{position:absolute;left:80%;top:64%;z-index:3;display:flex;align-items:flex-start;gap:2px;pointer-events:none;animation:cur 4.6s var(--ease) infinite}
 .cur svg{filter:drop-shadow(0 3px 5px rgba(0,0,0,.25))}
@@ -370,7 +371,7 @@ footer{position:relative;padding:26px 20px 30px;text-align:center;font-size:12.5
     <p class="tag rv dl1"><i></i>Concurso da GCM de Angra dos Reis/RJ</p>
     <h1 class="rv dl2"><span>O seu caminho para a aprovação</span> na GCM de Angra dos Reis começa aqui!</h1>
     <p class="sub rv dl2">Entre no grupo de WhatsApp do <b>Instituto Souto</b> e receba gratuitamente o material para o <b>1º concurso da Guarda Civil Municipal de Angra dos Reis</b>.</p>
-    <div class="btn-wrap rv dl3"><button class="btn abrir" type="button">Entre no grupo de WhatsApp para receber o material <svg width="13" height="14" viewBox="0 0 14 15" fill="none" aria-hidden="true"><path d="M1.2 13.52 13.25 1.48M13.25 1.48H1.69m11.56 0v11.56" stroke="#1a0904" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="cur" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M3.5 2.8 20 10.2l-7.1 2.2-2.7 7.3z" fill="#ff6a1a" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><b>Você</b></span></div>
+    <div class="btn-wrap rv dl3"><button class="btn abrir" type="button"><svg class="wa-ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.05c-.24.68-1.42 1.3-1.95 1.35-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.13-.18-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.24.56.8 1.94.87 2.08.07.14.12.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.89.27.14.45.2.52.32.07.11.07.66-.17 1.35z"/></svg>Entre no grupo de WhatsApp para receber o material</button><span class="cur" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M3.5 2.8 20 10.2l-7.1 2.2-2.7 7.3z" fill="#ff6a1a" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><b>Você</b></span></div>
     <p class="note rv dl3"><i></i>100% gratuito &amp; online</p>
   </div>
 </section>
@@ -469,7 +470,7 @@ footer{position:relative;padding:26px 20px 30px;text-align:center;font-size:12.5
       </div>
       <div class="prof-foot">
         <div class="selo rv"><img src="img/logo-gcm-angra.webp" alt="Brasão da GCM de Angra dos Reis" width="141" height="194" loading="lazy"><div><small>Concurso</small><b>GCM Angra<br>dos Reis</b></div></div>
-        <div class="btn-wrap rv dl1"><button class="btn abrir" type="button">Quero entrar no grupo <svg width="13" height="14" viewBox="0 0 14 15" fill="none" aria-hidden="true"><path d="M1.2 13.52 13.25 1.48M13.25 1.48H1.69m11.56 0v11.56" stroke="#1a0904" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="cur" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M3.5 2.8 20 10.2l-7.1 2.2-2.7 7.3z" fill="#ff6a1a" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><b>Você</b></span></div>
+        <div class="btn-wrap rv dl1"><button class="btn abrir" type="button"><svg class="wa-ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.05c-.24.68-1.42 1.3-1.95 1.35-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.13-.18-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.24.56.8 1.94.87 2.08.07.14.12.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.89.27.14.45.2.52.32.07.11.07.66-.17 1.35z"/></svg>Quero entrar no grupo</button><span class="cur" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M3.5 2.8 20 10.2l-7.1 2.2-2.7 7.3z" fill="#ff6a1a" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><b>Você</b></span></div>
         <ul class="lista rv dl2">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#gw)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>Grupo gratuito no WhatsApp</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="url(#gw)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M10 8.6v6.8l5.6-3.4z" fill="url(#gw)" stroke="none"/></svg>Aulas gratuitas</li>
