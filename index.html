@@ -142,7 +142,24 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .foto-g .g-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.06);transition:transform 1.4s var(--ease)}
 .foto-g.on .g-img{transform:none}
 .foto-g::after{background:linear-gradient(90deg,rgba(7,8,11,.92) 0%,rgba(7,8,11,.5) 45%,rgba(7,8,11,0) 80%),linear-gradient(0deg,rgba(7,8,11,.6),transparent 50%)}
-.yt-card{background:radial-gradient(ellipse at 75% 30%,rgba(255,0,51,.16),transparent 60%),#0b0c11}
+.yt-card{background:radial-gradient(ellipse at 75% 30%,rgba(37,211,102,.14),transparent 60%),#0b0c11}
+.wa{background:#0b141a}
+.wa-top{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#202c33}
+.wa-top img{width:22px;height:auto}
+.wa-top b{display:block;font-size:10.5px;font-weight:600;color:#e9edef;line-height:1.2}
+.wa-top small{display:block;font-size:8.5px;color:#8696a0}
+.wa-chat{padding:9px 9px 11px;background:#0b141a radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px) 0 0/12px 12px}
+.wa-day{display:table;margin:0 auto 8px;font-size:8px;letter-spacing:.06em;color:#8696a0;background:#182229;border-radius:5px;padding:3px 8px}
+.wa-msg{position:relative;max-width:88%;background:#202c33;border-radius:0 8px 8px 8px;padding:4px 4px 6px}
+.wa-msg::before{content:"";position:absolute;left:-6px;top:0;border-top:7px solid #202c33;border-left:7px solid transparent}
+.wa-who{display:block;font-size:9.5px;font-weight:600;color:#ffa21f;padding:2px 4px 4px}
+.wa-vid{position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:#000}
+.wa-vid img{width:100%;height:100%;object-fit:cover}
+.wa-play{position:absolute;left:50%;top:50%;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;background:rgba(0,0,0,.55);display:grid;place-items:center}
+.wa-play::before{content:"";margin-left:3px;border-left:11px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent}
+.wa-dur{position:absolute;left:6px;bottom:5px;display:flex;align-items:center;gap:4px;font-size:8.5px;font-weight:600;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.7)}
+.wa-msg p{font-size:9.5px;line-height:1.35;color:#e9edef;padding:5px 4px 0}
+.wa-time{display:flex;justify-content:flex-end;align-items:center;gap:3px;font-size:8px;color:#8696a0;padding:1px 3px 0}
 .yt{position:absolute;right:-10%;top:11%;width:64%;z-index:2;border-radius:10px;overflow:hidden;background:#0f0f0f;box-shadow:-18px 22px 44px -12px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.1);transform:rotate(-3deg) translateY(14px);opacity:.6;transition:transform 1s var(--ease) .2s,opacity 1s var(--ease) .2s}
 .yt-card.on .yt{transform:rotate(-3deg);opacity:1}
 .yt-card .lbl{max-width:36%}
@@ -401,19 +418,26 @@ footer{position:relative;padding:26px 20px 30px;text-align:center;font-size:12.5
 
     <div class="item">
       <div class="thumb yt-card bl">
-        <div class="yt" aria-hidden="true">
-          <div class="yt-bar"><span class="yt-logo"><svg width="17" height="12" viewBox="0 0 21 15"><path fill="#ff0033" d="M19.76 2.21A2.53 2.53 0 0 0 17.98.43C16.4 0 10.09 0 10.09 0S3.77 0 2.19.42A2.58 2.58 0 0 0 .42 2.21C0 3.79 0 7.06 0 7.06s0 3.29.42 4.85a2.53 2.53 0 0 0 1.78 1.78c1.6.43 7.89.43 7.89.43s6.31 0 7.89-.41a2.53 2.53 0 0 0 1.78-1.78c.42-1.58.42-4.85.42-4.85s.02-3.29-.42-4.87z"/><path fill="#fff" d="M8.08 10.09V4.04l5.25 3.02-5.25 3.03z"/></svg>YouTube</span><span class="yt-search"></span></div>
-          <div class="yt-vid"><img src="img/youtube-aula-gcm.webp" alt="" width="800" height="450" loading="lazy"><span class="yt-play"><svg width="30" height="21" viewBox="0 0 21 15"><path fill="#ff0033" d="M19.76 2.21A2.53 2.53 0 0 0 17.98.43C16.4 0 10.09 0 10.09 0S3.77 0 2.19.42A2.58 2.58 0 0 0 .42 2.21C0 3.79 0 7.06 0 7.06s0 3.29.42 4.85a2.53 2.53 0 0 0 1.78 1.78c1.6.43 7.89.43 7.89.43s6.31 0 7.89-.41a2.53 2.53 0 0 0 1.78-1.78c.42-1.58.42-4.85.42-4.85s.02-3.29-.42-4.87z"/><path fill="#fff" d="M8.08 10.09V4.04l5.25 3.02-5.25 3.03z"/></svg></span><span class="yt-prog"><i></i></span></div>
-          <div class="yt-info"><img src="img/avatar-ismael.webp" alt="" width="192" height="192" loading="lazy"><div><b>Concurso Guarda Municipal de Angra dos Reis - Como ser Aprovado</b><small>Prof Ismael Souto</small></div></div>
+        <div class="yt wa" aria-hidden="true">
+          <div class="wa-top"><svg width="10" height="14" viewBox="0 0 10 16"><path d="M8 2 2 8l6 6" fill="none" stroke="#e9edef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><img src="img/logo-gcm-angra.webp" alt="" width="185" height="240" loading="lazy"><div><b>GCM Angra · Grupo de estudos</b><small>Prof. Ismael, Instituto Souto e você</small></div></div>
+          <div class="wa-chat">
+            <span class="wa-day">HOJE</span>
+            <div class="wa-msg">
+              <b class="wa-who">Prof. Ismael Souto</b>
+              <div class="wa-vid"><img src="img/youtube-aula-gcm.webp" alt="" width="800" height="450" loading="lazy"><span class="wa-play"></span><span class="wa-dur"><svg width="11" height="8" viewBox="0 0 16 11"><rect width="11" height="11" rx="2" fill="#fff"/><path d="M11 5.5 16 2v7z" fill="#fff"/></svg>48:12</span></div>
+              <p>Aula 01 liberada no grupo! Como ser aprovado na GCM de Angra 🎯</p>
+              <span class="wa-time">19:02 <svg width="15" height="9" viewBox="0 0 18 11"><path d="M1 6l3 3 6-7M7 9l1 1 7-8" fill="none" stroke="#53bdeb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </div>
         </div>
         <div class="num">03</div>
         
-        <div class="lbl"><small>Com o Prof. Ismael</small><strong>Aulas no<br>YouTube</strong></div>
+        <div class="lbl"><small>No grupo</small><strong>Aulas<br>gratuitas</strong></div>
       </div>
       <div class="txt">
-        <div class="rv"><div class="pill"><span class="dt"><svg width="22" height="22" viewBox="0 0 27 27" aria-hidden="true"><circle cx="13.5" cy="13.5" r="13.5" fill="#fff"/><path d="M11 9.4v8.2l7.4-4.1z" fill="#1a0904"/></svg>Aulas</span><p>Gratuitas no YouTube</p></div></div>
-        <h3 class="rv dl1"><span class="dgw">Aulas gratuitas</span> <span class="dgb">no YouTube</span></h3>
-        <p class="t rv dl2">Aulas com o Prof. Ismael Souto para você sair do zero e estudar com estratégia rumo à sua vaga na Guarda.</p>
+        <div class="rv"><div class="pill"><span class="dt"><svg width="22" height="22" viewBox="0 0 27 27" aria-hidden="true"><circle cx="13.5" cy="13.5" r="13.5" fill="#fff"/><path d="M11 9.4v8.2l7.4-4.1z" fill="#1a0904"/></svg>Aulas</span><p>Enviadas no grupo</p></div></div>
+        <h3 class="rv dl1"><span class="dgw">Aulas</span> <span class="dgb">gratuitas</span></h3>
+        <p class="t rv dl2">Aulas com o Prof. Ismael Souto enviadas direto no grupo de estudos, para você sair do zero e estudar com estratégia rumo à sua vaga na Guarda.</p>
       </div>
     </div>
   </div>
