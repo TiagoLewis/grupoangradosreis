@@ -350,6 +350,15 @@ footer{position:relative;padding:26px 20px 30px;text-align:center;font-size:12.5
   .rv,.bl{opacity:1;transform:none;filter:none}
 }
 </style>
+<!-- Meta Pixel (carrega após a 1ª interação ou 3s depois do load, para não pesar no PageSpeed) -->
+<script>
+!function(f,n){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window);
+fbq('init','828102750053261');fbq('track','PageView');
+(function(){var ok=0;function load(){if(ok)return;ok=1;var t=document.createElement('script');t.async=1;t.src='https://connect.facebook.net/en_US/fbevents.js';document.head.appendChild(t)}
+['scroll','pointerdown','touchstart','keydown','mousemove'].forEach(function(e){addEventListener(e,load,{once:true,passive:true})});
+addEventListener('load',function(){setTimeout(load,3000)});})();
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=828102750053261&amp;ev=PageView&amp;noscript=1"></noscript>
 </head>
 <body>
 
@@ -620,7 +629,7 @@ frame();
 /* popup */
 const popup = document.getElementById("popup");
 let lastFocus = null, rdT = 0;
-const abrir = () => { lastFocus = document.activeElement; popup.classList.add("popup-ativo"); popup.setAttribute("aria-hidden","false"); document.body.style.overflow = "hidden"; clearTimeout(rdT); rdT = setTimeout(() => { location.href = REDIRECT_URL; }, 2600); };
+const abrir = () => { if (window.fbq) fbq("track","Lead"); lastFocus = document.activeElement; popup.classList.add("popup-ativo"); popup.setAttribute("aria-hidden","false"); document.body.style.overflow = "hidden"; clearTimeout(rdT); rdT = setTimeout(() => { location.href = REDIRECT_URL; }, 2600); };
 const fechar = () => { clearTimeout(rdT); popup.classList.remove("popup-ativo"); popup.setAttribute("aria-hidden","true"); document.body.style.overflow = ""; lastFocus && lastFocus.focus(); };
 document.querySelectorAll(".abrir").forEach(b => b.addEventListener("click", abrir));
 document.querySelector(".fechar").addEventListener("click", fechar);
